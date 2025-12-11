@@ -17,13 +17,21 @@ var height float32
 
 is_human = true
 name := "Spider Man"
-age := 24
+age := 24 // this will be an int but we don't know if 32, 64 ecc, it will depend on your machine
 height := 1.85
 
-// both of the way assign a *STATIC* type
+// both ways assign a *STATIC* type
 
 // --------------------------------------
 
 // we can declare multiple variables on the same line
 
 is_human, name, age, height := true, "Spiderman", 24, 1.85
+
+// --------------------------------------
+
+// in go we have also costants
+// constants can not use the `:=` operator
+// constants need to be known at compile time
+
+const color = "violet"
