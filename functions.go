@@ -43,3 +43,5 @@ func getPoint() (int, int){
 }
 
 x, _ = getPoint()
+
+// need to go on with structs
