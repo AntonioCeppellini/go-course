@@ -31,8 +31,7 @@ increment(x)
 fmt.Println(x) // -> output will be 15
 // but if we do:
 x = increment(x)
-
-fmt.Println(x) // -> output will be 1
+fmt.Println(x) // -> output will be 16
 
 // IMPORTANT:
 // go doesn't allow us to have unused variables
@@ -44,4 +43,24 @@ func getPoint() (int, int){
 
 x, _ = getPoint()
 
-// need to go on with structs
+// doing this:
+func getCoordinates() (x, y int){ // we could see this as a way of documenting the function but the implicit return is a bit difficult to read, better to be always explicit
+  // x and y are initialized with zero values
+  return // automatically returning x and y
+}
+
+// is equal to:
+func getCoordinates() (int, int){
+  var x int
+  var y int
+  return x, y
+}
+
+// GUARD CLAUSES
+// early return or continue through a loop
+func divide(dividend, divisor int) (int, error) {
+  if divisor == 0 {
+    return 0, errors.New("Can not divide by zero")
+  }
+  return dividend/divisor, nil
+}
